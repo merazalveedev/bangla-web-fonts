@@ -7,9 +7,9 @@
 		"name": "About",
 		"url": "/about"
 	},
-  {
+   {
 		"name": "Docs",
-		"url": "/docs"
+		"url": "/documentation"
 	},
 	{
 		"name": "Contact",
