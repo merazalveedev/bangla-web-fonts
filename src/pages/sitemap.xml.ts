@@ -13,7 +13,7 @@ export function GET() {
   xmlContent += fonts
     .map(font => {
       return `  <url>
-    <loc>${siteUrl}/${font.FontPath}</loc>
+    <loc>${siteUrl}/${font.FontPath}/</loc>
   </url>`;
     })
     .join('\n');

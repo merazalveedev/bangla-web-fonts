@@ -3,6 +3,21 @@ import Footer from "../components/footer.astro";
 import Header from "../components/header.astro";
 import SquareLines from "../components/square-lines.astro";
 const { title, extraStyleUrl, metaDescription, fontPreloads, metaKeywords } = Astro.props;
+
+const url = `https://banglawebfonts.pages.dev${Astro.url.pathname}`;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": url,
+  "name": title,
+  "description": metaDescription,
+  "keywords": metaKeywords,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bangla Web Fonts"
+  }
+};
 ---
 
 <!doctype html>
@@ -16,7 +31,7 @@ const { title, extraStyleUrl, metaDescription, fontPreloads, metaKeywords } = As
 <meta name="theme-color" content="#ffffff">
 <meta name="google-site-verification" content="8w5E8Hs9xki0okFY2j_2aXhpFL1PQTEgT7cgtiw0eKc" />
 <meta property="og:title" content={title}>
-<meta property="og:description" content={metaDescription}>
+{metaDescription && <meta property="og:description" content={metaDescription}>}
 <meta property="og:image" content="https://banglawebfonts.pages.dev/assets/images/bangla-web-fonts-1200x630.jpg">
 <meta property="og:url" content={`https://banglawebfonts.pages.dev${Astro.url.pathname}`}>
 <meta property="og:type" content="website">
@@ -24,7 +39,7 @@ const { title, extraStyleUrl, metaDescription, fontPreloads, metaKeywords } = As
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="bn_BD">
 <meta name="twitter:title" content={title}>
-<meta name="twitter:description" content={metaDescription}>
+{metaDescription && <meta name="twitter:description" content={metaDescription}>}
 <meta name="twitter:url" content={`https://banglawebfonts.pages.dev${Astro.url.pathname}`}>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://banglawebfonts.pages.dev/assets/images/bangla-web-fonts-1200x630.jpg">
@@ -32,11 +47,15 @@ const { title, extraStyleUrl, metaDescription, fontPreloads, metaKeywords } = As
 <Fragment set:html={fontPreloads} />
 {extraStyleUrl && <link rel="stylesheet" href={extraStyleUrl}/>}
 <link rel="manifest" href="/manifest.json">
+<link rel="sitemap" href="/sitemap.xml">
     <script is:inline> if(typeof Storage!=="undefined"&&localStorage.getItem("dark_mode")==="true")document.documentElement.classList.add("dark"); </script>
     <style>.prose img {border-radius: 20px;}</style>
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/assets/logo/192x192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/assets/logo/512x512.png">
     <script src="../assets/css/main.css"></script>
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
   </head>
   <body class="antialiased bg-white dark:bg-neutral-950 overflow-x-hidden">
     <SquareLines />
