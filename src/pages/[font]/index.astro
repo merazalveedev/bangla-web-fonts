@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/main.astro";
 import fonts from '../../collections/fonts.json';
+import licenses from '../../collections/licenses.json';
 import PageHeading from "../../components/page-heading.astro";
 import CodeBox from "../../components/codebox.astro";
 import PreviewInput from "../../components/preview-input.astro";
@@ -13,7 +14,11 @@ export async function getStaticPaths() {
   }));
 }
 
-const { FontName, TotalStyles, FontFamily, FontWeights, FontTesterWeights, FontDesigner, FontPath, FontDesignerURL } = Astro.props;
+const { FontName, TotalStyles, FontFamily, FontWeights, FontTesterWeights, FontDesigner, FontPath, FontDesignerURL, FontLicense } = Astro.props;
+
+const LicenseInfo = licenses[FontLicense]?.LicenseText || FontLicense || "License information not available.";
+
+const FontCategory = FontFamily.includes("sans-serif") ? "Sans Serif" : (FontFamily.includes("serif") ? "Serif" : "Unknown");
 
 const getWeightName = (weight) => {
   const weightNames = {
@@ -68,7 +73,8 @@ const ExtraStyleUrl = `/css/${FontPath}.min.css`;
 <div class="relative z-20 w-full mx-auto lg:mx-0">
   <h1 class="text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-5xl lg:text-6xl">{FontName}</h1>
   <div id="type-tester"/>
-  <p class="mt-3 text-base leading-6 text-neutral-800 dark:text-neutral-200 sm:mt-4 lg:mt-6 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">Designed by <a href={FontDesignerURL} class="text-blue-600 hover:underline" target="_blank">{FontDesigner}</a></p>
+  <p class="mt-3 text-base leading-6 text-neutral-800 dark:text-neutral-200 sm:mt-4 lg:mt-6 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">Designed by <a href={FontDesignerURL} class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer"
+>{FontDesigner}</a></p>
 </div>
 
 <PreviewInput/>
@@ -83,27 +89,46 @@ const ExtraStyleUrl = `/css/${FontPath}.min.css`;
 <div class="mt-10 pt-10 border-t border-gray-300 dark:border-gray-800">
 
 <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">Embed</h2>
-<p class="mt-2 text-base leading-6 text-neutral-800 dark:text-neutral-200 sm:mt-3 lg:mt-5 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">To embed this font into a webpage, copy the following code and paste into the <span class="font-mono bg-gray-100 dark:bg-gray-900 px-1 py-0.5 rounded">&lt;head&gt;</span> of your HTML document.</p>
 
-<p class="text-neutral-900 dark:text-neutral-100 font-medium mt-4">Standard</p>
-<CodeBox id="STYLESHEETcodebox" code={`<link href="${FontCSS}" rel="stylesheet">`} />
+<div class="mt-2 flex flex-row flex-wrap">
+  <input id="tab-one" type="radio" name="tabs" class="peer/tab-one hidden" checked />
+  <label for="tab-one" class="text-sm font-mono bg-neutral-100 hover:bg-slate-200 peer-checked/tab-one:text-white peer-checked/tab-one:bg-gray-800 cursor-default px-3 py-1 rounded-lg block mr-3">
+    &lt;link&gt;
+  </label>
+  <input id="tab-two" type="radio" name="tabs" class="peer/tab-two hidden" />
+  <label for="tab-two" class="text-sm font-mono bg-neutral-100 hover:bg-slate-200 peer-checked/tab-two:text-white peer-checked/tab-two:bg-gray-800 cursor-default px-3 py-1 rounded-lg block">
+    @import
+  </label>
 
-<p class="text-neutral-900 dark:text-neutral-100 font-medium mt-8">@import</p>
-<CodeBox id="IMPORTcodebox" code={`<style>
+  <div class="basis-full h-0"></div>
+  <p class="mt-4">Copy the following code and paste into the <span class="text-sm font-mono bg-gray-100 dark:bg-gray-900 px-1 py-0.5 rounded">&lt;head&gt;</span> of your HTML document.</p>
+
+  <div class="hidden peer-checked/tab-one:block w-full rounded-xl">
+    <CodeBox id="STYLESHEETcodebox" code={`<link href="${FontCSS}" rel="stylesheet">`} />
+  </div>
+  <div class="hidden peer-checked/tab-two:block w-full rounded-xl">
+    <CodeBox id="IMPORTcodebox" code={`<style>
 @import url('${FontCSS}');
 </style>`} />
+  </div>
+</div>
 
-<h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl mt-10">Specify in CSS</h2>
-<p class="text-neutral-900 dark:text-neutral-100 mt-3 sm:mt-4">Use the following CSS rule to specify the {FontName} font family</p>
-<CodeBox id="FAMILYcodebox" code={`font-family: ${FontFamily};`} />
 
-<p class="text-neutral-900 dark:text-neutral-100 mt-8">Here is an example of a paragraph set in {FontName} font</p>
-<CodeBox id="CLASScodebox" code={`p {
+
+
+<h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl mt-10">CSS</h2>
+<p class="text-neutral-900 dark:text-neutral-100 mt-3 sm:mt-4">Use the <span class="text-sm font-mono bg-gray-100 dark:bg-gray-900 px-1 py-0.5 rounded notranslate">font-family: {FontFamily};</span> CSS declaration to specify the {FontName} font. Example:</p>
+<CodeBox id="CLASScodebox" code={`body {
   font-family: ${FontFamily};
   font-weight: 400;
   font-style: normal;
 }`} />
 </div>
+<p class="mt-5">If you face any problems while embedding the font, please check the <a class="text-blue-600 hover:underline" href="/documentation/">documentation</a>.</p>
+
+
+
+
 
 <div class="mt-10 bg-blue-50 dark:bg-gray-900 border-l-4 border-blue-500 dark:border-blue-400 text-blue-900 dark:text-blue-100 p-4 rounded-lg">
   <h3 class="font-bold text-lg">Performance Tip</h3>
@@ -115,7 +140,39 @@ const ExtraStyleUrl = `/css/${FontPath}.min.css`;
     <p class="text-blue-600 dark:text-blue-300 break-words whitespace-normal">{FontMinifiedCSS}</p>
   </div>
 </div>
-<p class="mt-5">If you face any problems while embedding the font, please check the <a class="text-blue-600 hover:underline" href="/documentation">documentation</a>.</p>
+
+
+
+
+<div id="about" class="pt-12">
+  <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">About {FontName} Font</h2>
+<div class="mt-2">
+  <div class="pt-2 sm:pt-1 sm:grid sm:grid-cols-4 sm:gap-0">
+    <h3 class="font-medium text-neutral-800 dark:text-neutral-200">Family</h3>
+    <p class="text-neutral-700 dark:text-neutral-300 sm:col-span-3">{FontName}</p>
+  </div>
+  <div class="pt-2 sm:pt-1 sm:grid sm:grid-cols-4 sm:gap-0">
+    <h3 class="font-medium text-neutral-800 dark:text-neutral-200">Total Styles</h3>
+    <p class="text-neutral-700 dark:text-neutral-300 sm:col-span-3">{TotalStyles}</p>
+  </div>
+  <div class="pt-2 sm:pt-1 sm:grid sm:grid-cols-4 sm:gap-0">
+    <h3 class="font-medium text-neutral-800 dark:text-neutral-200">Category</h3>
+    <p class="text-neutral-700 dark:text-neutral-300 sm:col-span-3">{FontCategory}</p>
+  </div>
+  <div class="pt-2 sm:pt-1 sm:grid sm:grid-cols-4 sm:gap-0">
+    <h3 class="font-medium text-neutral-800 dark:text-neutral-200">Designer</h3>
+    <a href={FontDesignerURL} target="_blank" rel="noopener noreferrer" class="text-blue-600 sm:col-span-3 sm:mt-0 hover:underline">{FontDesigner}</a>
+  </div>
+  <div class="pt-2 sm:pt-1 sm:grid sm:grid-cols-4 sm:gap-0">
+    <h3 class="font-medium text-neutral-800 dark:text-neutral-200">License</h3>
+    <p class="text-neutral-700 dark:text-neutral-300 sm:col-span-3" set:html={LicenseInfo}></p>
+  </div>
+ </div>
+</div>
+
+
+
+
 
 <div class="mt-12">
   <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">Glyphs</h2>

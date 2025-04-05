@@ -7,7 +7,8 @@
     "FontWeights": [300, 400, 600, 700],
     "FontTesterWeights": [300, 400, 600, 700],
     "FontDesigner": "Solaiman Karim",
-    "FontDesignerURL": "https://ekushey.org/designer/solaiman-karim/"
+    "FontDesignerURL": "https://ekushey.org/designer/solaiman-karim/",
+    "FontLicense": "OFL"
   },
   {
     "FontName": "Kalpurush",
@@ -17,7 +18,8 @@
     "FontWeights": [400],
     "FontTesterWeights": [400, 700],
     "FontDesigner": "Md. Tanbin Islam Siyam",
-    "FontDesignerURL": "https://github.com/potasiyam"
+    "FontDesignerURL": "https://github.com/potasiyam",
+    "FontLicense": "OFL"
   },
   {
     "FontName": "Siyam Rupali",
@@ -27,7 +29,8 @@
     "FontWeights": [400],
     "FontTesterWeights": [400, 700],
     "FontDesigner": "Md. Tanbin Islam Siyam",
-    "FontDesignerURL": "https://github.com/potasiyam"
+    "FontDesignerURL": "https://github.com/potasiyam",
+    "FontLicense": "GPL"
   },
   {
     "FontName": "Hind Siliguri",
@@ -37,7 +40,8 @@
     "FontWeights": [300, 400, 500, 600, 700],
     "FontTesterWeights": [300, 400, 500, 600, 700],
     "FontDesigner": "Indian Type Foundry",
-    "FontDesignerURL": "https://www.indiantypefoundry.com/"
+    "FontDesignerURL": "https://www.indiantypefoundry.com/",
+    "FontLicense": "OFL"
   },
   {
     "FontName": "Baloo Da 2",
@@ -47,7 +51,8 @@
     "FontWeights": [400, 500, 600, 700, 800],
     "FontTesterWeights": [400, 500, 600, 700, 800],
     "FontDesigner": "Ek Type",
-    "FontDesignerURL": "https://ektype.in/"
+    "FontDesignerURL": "https://ektype.in/",
+    "FontLicense": "OFL"
   },
   {
     "FontName": "Lohit Bengali",
@@ -57,7 +62,8 @@
     "FontWeights": [400],
     "FontTesterWeights": [400, 700],
     "FontDesigner": "Lohit Fonts Project",
-    "FontDesignerURL": "https://pagure.io/lohit"
+    "FontDesignerURL": "https://pagure.io/lohit",
+    "FontLicense": "OFL"
   },
   {
     "FontName": "Tiro Bangla",
@@ -67,7 +73,8 @@
     "FontWeights": [400],
     "FontTesterWeights": [400, 700],
     "FontDesigner": "Tiro Typeworks",
-    "FontDesignerURL": "https://www.tiro.com/"
+    "FontDesignerURL": "https://www.tiro.com/",
+    "FontLicense": "OFL"
   },
   {
     "FontName": "Noto Serif Bengali",
@@ -77,7 +84,8 @@
     "FontWeights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
     "FontTesterWeights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
     "FontDesigner": "Google",
-    "FontDesignerURL": "https://fonts.google.com/"
+    "FontDesignerURL": "https://fonts.google.com/",
+    "FontLicense": "OFL"
   },
   {
     "FontName": "Mina",
@@ -87,7 +95,8 @@
     "FontWeights": [400, 700],
     "FontTesterWeights": [400, 700],
     "FontDesigner": "Suman Bhandary, Natanael Gama, Mooniak",
-    "FontDesignerURL": "https://github.com/suman51284"
+    "FontDesignerURL": "https://github.com/suman51284",
+    "FontLicense": "OFL"
   },
   {
     "FontName": "Ekushey Lal Sabuj",
@@ -96,8 +105,9 @@
     "FontPath": "ekushey-lal-sabuj",
     "FontWeights": [400],
     "FontTesterWeights": [400, 700],
-    "FontDesigner": "Proshika Computer Systems",
-    "FontDesignerURL": "https://ekushey.org/designer/poshkha/"
+    "FontDesigner": "Ekushey",
+    "FontDesignerURL": "https://ekushey.org/",
+    "FontLicense": "OFL"
   },
   {
     "FontName": "Adorsho Lipi",
@@ -106,8 +116,9 @@
     "FontPath": "adorsho-lipi",
     "FontWeights": [400],
     "FontTesterWeights": [400, 700],
-    "FontDesigner": "cgimagine",
-    "FontDesignerURL": "#"
+    "FontDesigner": "Partha Sarathi Pal",
+    "FontDesignerURL": "mailto:p.s.pal.2006@gmail.com",
+    "FontLicense": "GPL"
   },
   {
     "FontName": "Charukola",
@@ -117,7 +128,8 @@
     "FontWeights": [300, 400, 700],
     "FontTesterWeights": [300, 400, 700],
     "FontDesigner": "Chandan Acharja",
-    "FontDesignerURL": "https://charuchandan.wordpress.com/"
+    "FontDesignerURL": "https://charuchandan.wordpress.com/",
+    "FontLicense": "This font is free for everyone to use."
   },
   {
     "FontName": "AB Shapla",
@@ -127,7 +139,8 @@
     "FontWeights": [400],
     "FontTesterWeights": [400, 700],
     "FontDesigner": "Maksud Rahman, Muhammad Nazimuddaula, Tirana Khan",
-    "FontDesignerURL": "https://web.archive.org/web/20160408060023/http://www.amarbornomala.gov.bd/fonts/details/1"
+    "FontDesignerURL": "https://web.archive.org/web/20160408060023/http://www.amarbornomala.gov.bd/fonts/details/1",
+    "FontLicense": "This font is free for everyone to use, but its commercial distribution is strictly prohibited."
   },
   {
     "FontName": "Ekushey Mukto",
@@ -136,8 +149,9 @@
     "FontPath": "ekushey-mukto",
     "FontWeights": [400, 700],
     "FontTesterWeights": [400, 700],
-    "FontDesigner": "Proshika Computer Systems",
-    "FontDesignerURL": "https://ekushey.org/designer/poshkha/"
+    "FontDesigner": "Ekushey",
+    "FontDesignerURL": "https://ekushey.org/",
+    "FontLicense": "OFL"
   },
   {
     "FontName": "Bensen",
@@ -147,7 +161,8 @@
     "FontWeights": [400],
     "FontTesterWeights": [400, 700],
     "FontDesigner": "Subrata Sen",
-    "FontDesignerURL": "https://www.subratasen.com/"
+    "FontDesignerURL": "https://www.subratasen.com/",
+    "FontLicense": "GPL"
   },
   {
     "FontName": "Bensen Handwriting",
@@ -157,7 +172,8 @@
     "FontWeights": [400],
     "FontTesterWeights": [400, 700],
     "FontDesigner": "Subrata Sen",
-    "FontDesignerURL": "https://www.subratasen.com/"
+    "FontDesignerURL": "https://www.subratasen.com/",
+    "FontLicense": "GPL"
   },
   {
     "FontName": "Ekushey Saraswatii",
@@ -166,8 +182,9 @@
     "FontPath": "ekushey-saraswatii",
     "FontWeights": [400],
     "FontTesterWeights": [400, 700],
-    "FontDesigner": "Omi Azad, Solaiman Karim",
-    "FontDesignerURL": "https://ekushey.org/designer/omiazad-solaimankarim/"
+    "FontDesigner": "Ekushey",
+    "FontDesignerURL": "https://ekushey.org/",
+    "FontLicense": "GPL"
   },
   {
     "FontName": "Atma",
@@ -177,7 +194,8 @@
     "FontWeights": [300, 400, 500, 600, 700],
     "FontTesterWeights": [300, 400, 500, 600, 700],
     "FontDesigner": "Black Foundry",
-    "FontDesignerURL": "https://black-foundry.com/"
+    "FontDesignerURL": "https://black-foundry.com/",
+    "FontLicense": "OFL"
   },
   {
     "FontName": "Charu Chandan",
@@ -187,7 +205,8 @@
     "FontWeights": [400, 700],
     "FontTesterWeights": [400, 700],
     "FontDesigner": "Chandan Acharja",
-    "FontDesignerURL": "https://charuchandan.wordpress.com/"
+    "FontDesignerURL": "https://charuchandan.wordpress.com/",
+    "FontLicense": "This font is free for everyone to use."
   },
   {
     "FontName": "Ekushey Azad",
@@ -196,8 +215,9 @@
     "FontPath": "ekushey-azad",
     "FontWeights": [400],
     "FontTesterWeights": [400, 700],
-    "FontDesigner": "Omi Azad",
-    "FontDesignerURL": "https://ekushey.org/designer/omi-azad/"
+    "FontDesigner": "Ekushey",
+    "FontDesignerURL": "https://ekushey.org/",
+    "FontLicense": "GPL"
   },
   {
     "FontName": "Noto Sans Bengali",
@@ -207,7 +227,8 @@
     "FontWeights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
     "FontTesterWeights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
     "FontDesigner": "Google",
-    "FontDesignerURL": "https://fonts.google.com/"
+    "FontDesignerURL": "https://fonts.google.com/",
+    "FontLicense": "OFL"
   },
   {
     "FontName": "Anek Bangla",
@@ -217,6 +238,51 @@
     "FontWeights": [100, 200, 300, 400, 500, 600, 700, 800],
     "FontTesterWeights": [100, 200, 300, 400, 500, 600, 700, 800],
     "FontDesigner": "Ek Type",
-    "FontDesignerURL": "https://ektype.in/"
+    "FontDesignerURL": "https://ektype.in/",
+    "FontLicense": "OFL"
+  },
+  {
+    "FontName": "Hoogli",
+    "TotalStyles": "5",
+    "FontFamily": "'Hoogli', sans-serif",
+    "FontPath": "hoogli",
+    "FontWeights": [300, 400, 500, 600, 700],
+    "FontTesterWeights": [300, 400, 500, 600, 700],
+    "FontDesigner": "Anand Singh Naorem",
+    "FontDesignerURL": "https://github.com/brandnewtype",
+    "FontLicense": "OFL"
+  },
+  {
+    "FontName": "Aikya",
+    "TotalStyles": "5",
+    "FontFamily": "'Aikya', serif",
+    "FontPath": "aikya",
+    "FontWeights": [300, 400, 500, 600, 700],
+    "FontTesterWeights": [300, 400, 500, 600, 700],
+    "FontDesigner": "Neelakash Kshetrimayum",
+    "FontDesignerURL": "https://github.com/brandnewtype",
+    "FontLicense": "OFL"
+  },
+  {
+    "FontName": "Sapa",
+    "TotalStyles": "2",
+    "FontFamily": "'Sapa', sans-serif",
+    "FontPath": "sapa",
+    "FontWeights": [400],
+    "FontTesterWeights": [400, 700],
+    "FontDesigner": "Danh Hong",
+    "FontDesignerURL": "https://github.com/danhhong",
+    "FontLicense": "OFL"
+  },
+  {
+    "FontName": "Kalaa",
+    "TotalStyles": "2",
+    "FontFamily": "'Kalaa', sans-serif",
+    "FontPath": "kalaa",
+    "FontWeights": [400],
+    "FontTesterWeights": [400, 700],
+    "FontDesigner": "Danh Hong",
+    "FontDesignerURL": "https://github.com/danhhong",
+    "FontLicense": "OFL"
   }
 ]
