@@ -3,6 +3,7 @@ import FontsList from "../components/home/fonts-list.astro";
 import Layout from "../layouts/main.astro";
 import fonts from "../collections/fonts.json";
 import Separator from "../components/home/separator.astro";
+import IndexCard from "../components/index-card.astro";
 
 const preloadedFonts = fonts.slice(0, 4);
 const FontPreloads = preloadedFonts
@@ -38,7 +39,40 @@ const MetaKeywords = `bangla web fonts, bangla fonts, free bangla fonts, ${Fonts
 
   </div>
 
-  <Separator text="Web Fonts" />
+  
 
-  <FontsList/>
+<div class="relative my-24">
+  <div class="relative w-full max-w-3xl pl-7 overflow-x-hidden md:pl-0">
+    <div class="absolute w-full h-px bg-gradient-to-r from-transparent to-white md:from-white dark:from-transparent dark:to-neutral-950 md:dark:from-neutral-950 md:via-transparent md:dark:via-transparent md:to-white md:dark:to-neutral-950"></div>
+    <div class="w-full h-px border-t border-dashed border-neutral-300 dark:border-neutral-600"></div>
+  </div>
+  <div class="openSearch absolute flex items-center justify-center w-auto h-auto px-4 py-1.5 tracking-widest space-x-1 text-[0.8rem] md:-translate-x-1/2 -translate-y-1/2 border rounded-xl bg-white dark:bg-neutral-900 text-neutral-500 left-0 md:ml-0 ml-7 md:left-1/2 border-neutral-100 dark:border-neutral-800 shadow-sm hover:shadow-lg">
+    <p class="leading-none">Search Web Fonts</p>
+    <div class="flex items-center justify-center w-6 h-6 translate-x-1 border rounded-full border-neutral-100 dark:border-neutral-800">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"></path> </svg>
+    </div>
+  </div>
+</div>
+
+
+<FontsList/>
+
+<Separator text="Other Stuff"/>
+
+<section class="max-w-3xl my-12 mx-auto px-7 lg:px-0">
+  <div
+    class="grid items-stretch w-full grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-7 mt-7"
+  >
+
+<IndexCard CardName="Icons" CardDescription="Browse a collection of Bangla-themed SVG icons, including single-color and multi-color options." CardPath="icons"/>
+
+<IndexCard CardName="Tools" CardDescription="Explore tools for Unicode conversion, font comparison, Bangla spell checking and more." CardPath="tools"/>
+</div>
+
+<IndexCard CardName="Unicode Characters" CardDescription="Browse Unicode characters relevant to Bangla typography." CardPath="unicode"/>
+
+</section>
+
+
+
 </Layout>

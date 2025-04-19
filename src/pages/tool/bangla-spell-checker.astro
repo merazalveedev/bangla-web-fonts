@@ -1,0 +1,58 @@
+---
+import PageHeading from "../../components/page-heading.astro";
+import Layout from "../../layouts/main.astro";
+---
+
+<Layout title="Bangla Spell Checker Tool - Bangla Web Fonts" metaDescription="Check and correct Bangla spelling instantly with this free Bangla Spell Checker tool. Improve your writing accuracy in Bengali with real-time suggestions." metaKeywords="bangla spell checker, বাংলা বানান পরীক্ষক, bengali spelling tool, bangla grammar, bangla text correction, spell check bangla, banglawebfonts, bengali spell corrector, bangla writing tool, bangla language tool">
+  <section class="relative z-20 max-w-3xl mx-auto my-12 px-7 lg:px-0">
+    <PageHeading
+      title="Bangla Spell Checker"
+      description=""
+    />
+
+ 
+    <script src="../../assets/css/bangla-spell-checker.css"></script>
+
+<label for="bangla-text" class="block font-medium text-gray-800 dark:text-gray-100 mb-2 mt-10">Enter Your Text</label>
+
+    <textarea
+      id="bangla-text"
+      rows="6"
+      class="w-full p-4 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-700 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 resize-none"
+      placeholder="Type or paste your Bangla text here..."
+    ></textarea>
+
+    <div class="flex items-center gap-3 mt-4">
+
+      <button
+        id="copyButton"
+        onclick="copyText()"
+        class="px-4 py-2 bg-gray-200 hover:bg-gray-300  rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed dark:bg-blue-500 dark:hover:bg-blue-600"
+      >Copy</button>
+
+      
+      <button
+        id="spellCheck"
+        class="flex-1 py-2 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all duration-200 dark:bg-green-500 dark:hover:bg-green-600"
+      >Check Spelling</button>
+
+      
+      <button
+        id="clearButton"
+        onclick="clearText()"
+        class="px-4 py-2 bg-gray-200 hover:bg-gray-300  rounded-lg transition-all duration-200 dark:bg-red-500 dark:hover:bg-red-600"
+      > Clear</button>
+    </div>
+
+<p class="mt-8 text-sm text-neutral-800">Spell Checking API powered by <a href="https://bangla.plus/" rel="noopener noreferrer" target="_blank" class="text-blue-600 hover:underline"> Bangla Plus</a></p>
+  
+  <script is:inline>function copyText(){let e=document.getElementById("bangla-text"),t=document.getElementById("copyButton");e.select(),e.setSelectionRange(0,99999),document.execCommand("copy"),t.innerHTML="Copied",t.disabled=!0,t.classList.add("opacity-50","cursor-not-allowed"),setTimeout(()=>{t.innerHTML="Copy",t.disabled=!1,t.classList.remove("opacity-50","cursor-not-allowed")},3e3)}function clearText(){let e=document.getElementById("bangla-text");e.value="",e.focus()} </script>
+
+<script is:inline src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script is:inline src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
+<script is:inline src="/assets/js/bangla-spell-checker.js"></script>
+<script is:inline>$("#spellCheck").click(function(){BanglaSpeller("#bangla-text",{displayLanguage:"English"})});</script>
+
+
+</section>
+</Layout>

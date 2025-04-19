@@ -1,18 +1,22 @@
 [
 	{
-		"name": "Home",
+		"name": "Fonts",
 		"url": "/"
 	},
 	{
-		"name": "About",
-		"url": "/about/"
+		"name": "Icons",
+		"url": "/icons/"
 	},
-   {
+	{
+		"name": "Tools",
+		"url": "/tools/"
+	},
+ {
 		"name": "Docs",
 		"url": "/documentation/"
 	},
 	{
-		"name": "Contact",
-		"url": "/contact/"
+		"name": "About",
+		"url": "/about/"
 	}
 ]

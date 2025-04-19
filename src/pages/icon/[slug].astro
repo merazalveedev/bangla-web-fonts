@@ -1,0 +1,110 @@
+---
+import Layout from "../../layouts/main.astro";
+import PageHeading from "../../components/page-heading.astro";
+import icons from '../../collections/icons.json';
+import CodeBox from "../../components/codebox.astro";
+
+export async function getStaticPaths() {
+  return icons.map(icon => ({
+    params: { slug: icon.IconPath },
+    props: icon,
+  }));
+}
+
+const { IconName, IconPath, IconColor, IconDesigner, IconDesignerURL, IconSourceURL, IconLicense, IconSVG } = Astro.props;
+
+const sizes = [24, 32, 48, 64, 96, 128];
+
+function getSizedSVG(svg: string, size: number) {
+  return svg
+    .replace(/width=['"][^'"]*['"]/, `width="${size}"`)
+    .replace(/height=['"][^'"]*['"]/, `height="${size}"`);
+}
+
+function prettifySVG(svg) {
+  return svg
+    .replace(/><(path|text|rect|circle|line|g|\/g)>/g, '>\n  <$1>') // indent major tags
+    .replace(/><(?!\/)/g, '>\n  <') // line break + indent for all opening tags
+    .replace(/<\/svg>/, '\n</svg>') // newline before closing svg
+    .trim();
+}
+
+
+const prettySVG = prettifySVG(IconSVG);
+
+const PageTitle = `${IconName} Icon - Bangla Web Icons`;
+const MetaDescription = `${IconName} icon optimized, refined for consistent design and beautifully smooth for web development and creative projects.`;
+
+const iconNameL = IconName.toLowerCase();
+const MetaKeywords = `${iconNameL} icon, ${iconNameL} bangla icon, ${iconNameL} bengali svg, ${iconNameL} web design, ${iconNameL} ui icons, ${iconNameL} graphics, ${iconNameL} vector icons, optimized ${iconNameL} svg,${iconNameL} ui, ${iconNameL} logo, ${iconNameL} design`;
+
+const FontPreloads = `<style>
+pre {overflow-x: auto!important;white-space: pre!important;word-break: normal!important;}</style>`;
+---
+
+
+
+<Layout title={PageTitle}  metaDescription={MetaDescription} metaKeywords={MetaKeywords}
+fontPreloads={FontPreloads}
+>
+<section class="relative z-20 max-w-3xl mx-auto my-12 px-7 lg:px-0 overflow-x-hidden">
+
+
+
+
+
+<div class="relative z-20 w-full mx-auto lg:mx-0">
+    <p class="mb-3 text-base leading-6 text-neutral-800 dark:text-neutral-200 sm:mb-4 lg:mb-6 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"><a href="/icons/" class="text-blue-600 hover:underline">&larr; Icons</a></p>
+  <h1 class="text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-5xl lg:text-6xl">{IconName} Icon</h1>
+</div>
+
+
+
+
+
+
+
+    <div id="preview" class="my-10 inset-0 h-full w-full bg-white bg-[radial-gradient(#e0e0e0_1px,transparent_1px)] [background-size:16px_16px] border border-dashed border-neutral-300 dark:bg-gray-900 rounded-xl px-7 py-12">
+<img src={`/icons/${IconPath}.svg`} class="w-full max-w-[200px] mx-auto" width="200" height="200" loading="lazy" alt={`${IconPath} icon svg`}/>
+</div>
+
+
+
+
+
+
+      <h2 class="sr-only">Icon Details</h2>
+      <!--h3>Color Type: {IconColor}</h3-->
+      <h3>Designer: <a class="text-blue-600 hover:underline" href={IconDesignerURL} target="_blank" rel="noopener noreferrer nofollow">{IconDesigner}</a></h3>
+      <!-- <h3 class="flex">Source: <a class="text-blue-600 hover:underline block truncate max-w-[250px] overflow-hidden whitespace-nowrap pl-1" href={IconSourceURL} target="_blank" rel="noopener noreferrer nofollow">{IconSourceURL}</a></h3> -->
+      <h3>License: <a class="text-blue-600 hover:underline" href={`/licenses/icons/#${IconLicense}`}>{IconLicense} License</a></h3>
+      <div class="block text-sm opacity-75">Optimized and slightly modified by <a class="text-blue-600 hover:underline" href="https://github.com/fuadhasanshihab" target="_blank">Fuad Hasan Shihab</a>.</div>
+<a href="/licenses/icons/#modification" class="block text-sm text-blue-600 hover:underline opacity-75">Learn more.</a>
+
+
+
+<h2 class="mt-10 text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">SVG Code</h2>
+<CodeBox id="SVGcodebox" code={prettySVG}/>
+
+
+
+
+<h2 class="mt-10 mb-4 text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">{IconName} Icon in Various Sizes</h2>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-7">
+  {sizes.map(size => (
+    <div class="text-center hover:bg-gray-50 rounded-xl transition border border-dashed border-neutral-300 p-3 flex flex-col justify-center">
+      <div class="my-auto min-h-[140px] flex justify-center"><span class="my-auto" set:html={getSizedSVG(IconSVG, size)}></span></div>
+      <p class="text-sm mt-2 text-neutral-600">{size} × {size}</p>
+    </div>
+  ))}
+</div>
+
+
+
+
+</section>
+
+
+<script src="../../assets/js/font.js"></script>
+</Layout>
+  
